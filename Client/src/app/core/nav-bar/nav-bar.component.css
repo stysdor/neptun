@@ -1,0 +1,49 @@
+
+
+/*************************************/
+/******* Main navigation panel********/
+#main-navbar {
+  width: 100%;
+  align-content: center;
+  background-color: var(--main-dark-color);
+  padding: 5px 5px 10px 5px;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.nav-img {
+  height: 30px;
+  width: auto;
+}
+
+.nav-a-img {
+  padding: 5px;
+  border: 1px solid var(--sec-dark-color);
+  border-radius: 5px;
+  padding: .25rem .75rem;
+  box-sizing: border-box;
+}
+
+.nav-a-img:hover {
+    border-color: var(--main-light-color)
+}
+  .logo {
+  height: 30px;
+  width: auto;
+  padding: 0;
+}
+
+ul.navbar-icons {
+  padding-inline-start: 0;
+  text-align: center;
+  display: flex;
+  margin: 0;
+  
+}
+.navbar-icons li {
+  list-style: none;
+  padding: 5px;
+}
+
+

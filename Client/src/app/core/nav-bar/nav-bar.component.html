@@ -1,0 +1,45 @@
+
+<!-- Main navigation Bar-->
+
+<nav class="navbar navbar-expand-lg navbar-dark " id="main-navbar">
+  <div class="container">
+    <ul class="navbar-icons">
+      <li >
+        <a href="#" class="nav-link nav-a-img">
+          <img class="logo" src="assets/images/logo.png" alr="logo" />
+        </a>
+      </li>
+      <li >
+        <a href="#" class="nav-link nav-a-img">
+          <img class="nav-img" src="../../../assets/images/calendarLight.png" />
+        </a>
+      </li>
+      <li  >
+        <a href="#" class="nav-link nav-a-img">
+          <img class="nav-img" src="../../../assets/images/ticketsLight.png" />
+        </a>
+      </li>
+    </ul>
+
+    <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="isCollapsed">
+      <ul class="navbar-nav ml-auto" id="main-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Repertuar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Bilety</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">O kinie</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 
+
+ 
