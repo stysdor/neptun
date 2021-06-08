@@ -25,7 +25,7 @@ namespace neptun.API.Controllers
 
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<Showing>>> GetCurrentShowings(
+        public async Task<ActionResult<IReadOnlyList<ShowingDTO>>> GetCurrentShowings(
             [FromQuery] ShowingSpecParams showingParams)
         {
             showingParams.DateOfToday = DateTime.Today;
@@ -37,5 +37,26 @@ namespace neptun.API.Controllers
                 .Map<IReadOnlyList<Showing>, IReadOnlyList<ShowingDTO>>(showings);
             return Ok(new Pagination<ShowingDTO>(showingParams.PageIndex, showingParams.PageSize, totalItems, data));
         }
+
+        [HttpGet]
+        [Route("today")]
+        public async Task<ActionResult<ShowingDTO>> GetTodaysShowing()
+        {
+            var spec = new CurrentShowingsWithMovieAndTheatreSpecification(DateTime.Today);
+            var showing = await showingRepo.GetEntityWithSpec(spec);
+
+            return mapper.Map<Showing, ShowingDTO>(showing);
+        }
+
+        [HttpGet]
+        [Route("tomorrow")]
+        public async Task<ActionResult<ShowingDTO>> GetTomorrowsShowing()
+        {
+            var spec = new CurrentShowingsWithMovieAndTheatreSpecification(DateTime.Today.AddDays(1));
+            var showing = await showingRepo.GetEntityWithSpec(spec);
+
+            return mapper.Map<Showing, ShowingDTO>(showing);
+        }
+
     }
 }

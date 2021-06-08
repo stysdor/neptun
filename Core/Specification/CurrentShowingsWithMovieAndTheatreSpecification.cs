@@ -23,5 +23,13 @@ namespace Core.Specification
             ApplyPaging(showingParams.PageSize * (showingParams.PageIndex - 1),
                 showingParams.PageSize);
         }
+
+        public CurrentShowingsWithMovieAndTheatreSpecification(DateTime date)
+        : base(x => x.ShowingDateTime.Date == date)
+        {
+            AddInclude(x => x.Movie);
+            AddInclude(x => x.Theatre);
+            AddInclude(x => x.Movie.Genres);
+        }
     }
 }
