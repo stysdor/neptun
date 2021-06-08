@@ -33,13 +33,13 @@ namespace neptun.API.Controllers
             [FromQuery] MovieSpecParams moviesParams)
         {
             var spec = new MoviesWithGenresSpecification(moviesParams);
-            var countSpec = new MoviesWithFiltersForCountSpecification(moviesParams);
-            var totalItems = await movieRepo.CountAsync(countSpec);
+            //var countSpec = new MoviesWithFiltersForCountSpecification(moviesParams);
+            var totalItems = await movieRepo.CountAsync(spec);
             var movies = await movieRepo.ListAsync(spec);
 
             var data = mapper
                 .Map<IReadOnlyList<Movie>, IReadOnlyList<MovieDTO>>(movies);
-            return Ok(new Pagination<MovieDTO>(moviesParams.PageIndex, moviesParams.PageSize, countSpec, data));
+            return Ok(new Pagination<MovieDTO>(moviesParams.PageIndex, moviesParams.PageSize, totalItems, data));
         }
 
         [HttpGet("genres")]

@@ -12,8 +12,10 @@ namespace neptun.API.Helpers
     {
         public MappingProfiles()
         {
-            CreateMap<Movie, MovieDTO>();
-            CreateMap<Showing, ShowingDTO>();
+            CreateMap<Movie, MovieDTO>()
+                .ForMember(d => d.Genres, o => o.MapFrom(s => s.Genres.Select(t => t.Name).ToList()));
+            CreateMap<Showing, ShowingDTO>()
+                .ForMember(d => d.TheatreName, o => o.MapFrom(s => s.Theatre.Name));
                 
         }
     }

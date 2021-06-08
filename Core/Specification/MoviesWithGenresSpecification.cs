@@ -12,10 +12,11 @@ namespace Core.Specification
         public MoviesWithGenresSpecification(MovieSpecParams movieParams)
             : base(x =>
                 (string.IsNullOrEmpty(movieParams.Search) || x.Title.ToLower().Contains
-                (movieParams.Search)) //&&
-           // (movieParams.GenreId.HasValue && x.Genres.Contains(new Genre { Id = (int)movieParams.GenreId} ))    
+                (movieParams.Search)) 
+            //Add selection by genre
             )
         {
+           
             ApplyPaging(movieParams.PageSize * (movieParams.PageIndex - 1),
                 movieParams.PageSize);
         }

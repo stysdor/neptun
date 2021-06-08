@@ -7,8 +7,7 @@ namespace neptun.API.DTO
 {
     public class ShowingDTO
     {
-        public string MovieDTO { get; set; }
-        
+        public MovieDTO Movie { get; set; }
         public string TheatreName { get; set; }
         public DateTime ShowingDateTime { get; set; }
     }

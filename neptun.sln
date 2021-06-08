@@ -28,7 +28,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client(1)", "Client\", "{35
 		SlnRelativePath = "Client\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "neptun.API", "neptun.API\neptun.API.csproj", "{CCC9B653-87CB-4051-8DD9-8072BDB0F3E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "neptun.API", "neptun.API\neptun.API.csproj", "{CCC9B653-87CB-4051-8DD9-8072BDB0F3E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D8E043A-C0F0-40B6-9A44-7D07D5E017C4}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
