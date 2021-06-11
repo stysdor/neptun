@@ -1,1 +1,16 @@
-<p>showing works!</p>
+<div class="card h-100 shadow-sm">
+  <div class="image position-relative">
+    <img class="img-fluid bg-light" src="{{showing.movie.pictureUrl}}" />
+  </div>
+  <div class="card-body">
+    <div class="card-header">
+      <div>{{showing.showingDateTime}}</div>
+    </div>
+    <h5 class="card-title">{{showing.movie.title}}</h5>
+    <div class="card-text" >
+      <ul >
+        <li *ngFor="let genre of showing.movie.genres">{{genre.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

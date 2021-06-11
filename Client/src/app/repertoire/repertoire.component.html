@@ -1,1 +1,9 @@
-<p style="font-size: 250px;color: red;">repertoire works!</p>
+<section>
+  <ng-container *ngIf="showings">
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let item of showings">
+        <app-showing [showing]="item"></app-showing>
+      </div>
+    </div>
+  </ng-container>
+</section>
