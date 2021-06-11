@@ -4,6 +4,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { MainCarouselComponent } from './main-carousel/main-carousel.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,6 +14,7 @@ import { MainCarouselComponent } from './main-carousel/main-carousel.component';
   imports: [
     CommonModule,
     SharedModule,
+    RouterModule
    
   ],
   exports: [
