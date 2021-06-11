@@ -1,16 +1,28 @@
-<div class="card h-100 shadow-sm">
+<div class="showing-card">
   <div class="image position-relative">
     <img class="img-fluid bg-light" src="{{showing.movie.pictureUrl}}" />
   </div>
-  <div class="card-body">
-    <div class="card-header">
-      <div>{{showing.showingDateTime}}</div>
+
+  <div class="showing-datetime-bar d-flex">
+    <div class="showing-day">
+      <i class="fas fa-calendar-alt"></i>
+      <span>
+        {{day}}
+      </span>
     </div>
-    <h5 class="card-title">{{showing.movie.title}}</h5>
-    <div class="card-text" >
-      <ul >
-        <li *ngFor="let genre of showing.movie.genres">{{genre.name}}</li>
-      </ul>
+    <div class="showing-hour">
+      <i class="fas fa-clock"></i>
+      <span>
+        {{hour}}
+      </span>
     </div>
+  </div>
+  <div class="showing-title">
+    <h5>{{showing.movie.title}}</h5>
+  </div>
+  <div class="showing-genres" >
+    <ul >
+      <li *ngFor="let genre of showing.movie.genres">{{genre.name}}</li>
+    </ul>
   </div>
 </div>
