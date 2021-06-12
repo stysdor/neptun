@@ -5,5 +5,5 @@ export interface IMovie {
   title: string;
   description: string;
   pictureUrl: string;
-  genres: IGenre[];
+  genres: string[];
 }

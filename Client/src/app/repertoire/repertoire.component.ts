@@ -21,14 +21,14 @@ export class RepertoireComponent implements OnInit {
   }
 
   getShowings() {
-   /* this.showingService.getShowings(this.showingParams).subscribe(response => {
+    this.showingService.getShowings(this.showingParams).subscribe(response => {
       this.showings = response.data;
       this.showingParams.pageNumber = response.pageIndex;
       this.showingParams.pageSize = response.pageSize;
     }, error => {
       console.log(error);
-    })*/
-    const mockShowings: IShowing[] = [
+    })
+   /* const mockShowings: IShowing[] = [
       {
         id: 1,
         movie: { id: 1, title: "Title", description: "description", pictureUrl: "blabla", genres: [{ id: 1, name: "Action" }, {id: 2, name: "Dramat"}] },
@@ -42,6 +42,6 @@ export class RepertoireComponent implements OnInit {
         showingDateTime: new Date(2021, 6, 16, 18, 0, 0)
       }
     ]
-    this.showings = mockShowings;
+    this.showings = mockShowings; */
   }
 }
