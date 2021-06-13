@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { IShowing } from '../models/showing';
+import { Showing } from '../models/showing';
 import { ShowingParams } from '../models/showingParams';
 import { IPagination } from '../models/pagination';
 import { environment } from '../../../environments/environment';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,16 +18,22 @@ export class ShowingService {
     let params = new HttpParams();
     params = params.append('pageIndex', showingParams.pageNumber.toString());
     params = params.append('pageSize', showingParams.pageSize.toString());
-    var showings = this.http.get<IPagination>(this.baseUrl + 'showings', { params });
+    var showings = this.http.get<IPagination>(this.baseUrl + 'showings', { params })
+      .pipe(
+        map((response: IPagination) => {
+          response.data.map(showing => new Showing(showing));
+          return response;
+        })
+      );
     console.log(showings);
     return showings;
   }
 
   getTodaysShowing() {
-    return this.http.get<IShowing>(this.baseUrl + 'today');
+    return this.http.get<Showing>(this.baseUrl + 'today');
   }
 
   getTommorowShowing() {
-    return this.http.get<IShowing>(this.baseUrl + 'tommorow');
+    return this.http.get<Showing>(this.baseUrl + 'tommorow');
   }
 }

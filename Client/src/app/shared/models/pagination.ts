@@ -1,8 +1,8 @@
-import { IShowing } from "./showing";
+import { Showing } from "./showing";
 
 export interface IPagination {
   pageIndex: number;
   pageSize: number;
   count: number;
-  data: IShowing[];
+  data: Showing[];
 }

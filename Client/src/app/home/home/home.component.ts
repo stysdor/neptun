@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IShowing } from '../../shared/models/showing';
+import { Showing } from '../../shared/models/showing';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +7,7 @@ import { IShowing } from '../../shared/models/showing';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  comingShowing: IShowing[];
+  comingShowing: Showing[];
   isMobile: boolean;
 
 

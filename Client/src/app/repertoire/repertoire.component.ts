@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IShowing } from '../shared/models/showing';
+import { Showing } from '../shared/models/showing';
 import { ShowingParams } from '../shared/models/showingParams';
 import { ShowingService } from '../shared/services/showing.service';
 
@@ -10,7 +10,7 @@ import { ShowingService } from '../shared/services/showing.service';
 })
 export class RepertoireComponent implements OnInit {
 
-  showings: IShowing[];
+  showings: Showing[];
   showingParams = new ShowingParams();
 
   constructor(private showingService: ShowingService) { }
@@ -27,18 +27,19 @@ export class RepertoireComponent implements OnInit {
       this.showingParams.pageSize = response.pageSize;
     }, error => {
       console.log(error);
-    })
-   /* const mockShowings: IShowing[] = [
+    }) 
+    /*
+    const mockShowings: Showing[] = [
       {
         id: 1,
-        movie: { id: 1, title: "Title", description: "description", pictureUrl: "blabla", genres: [{ id: 1, name: "Action" }, {id: 2, name: "Dramat"}] },
-        theatreId: 1,
+        movie: { id: 1, title: "Title", description: "description", pictureUrl: "blabla", genres: ["Action", "Dramat"] },
+        theatreName: "sala okretowa",
         showingDateTime: new Date(2021, 6, 15, 18, 0, 0)
       },
       {
         id: 2,
-        movie: { id: 1, title: "Title2", description: "description2", pictureUrl: "blabla", genres: [{ id: 1, name: "Action" }, { id: 2, name: "Dramat" }] },
-        theatreId: 1,
+        movie: { id: 1, title: "Title2", description: "description2", pictureUrl: "blabla", genres: [ "Action" , "Dramat" ] },
+        theatreName: "sala okretowa",
         showingDateTime: new Date(2021, 6, 16, 18, 0, 0)
       }
     ]

@@ -27,7 +27,7 @@
 }
 
 .showing-title {
-  padding: 5%;
+  padding: 3%;
   color: var(--main-contrast-color);
 }
 
@@ -35,10 +35,13 @@
   color: #c4c5c8;
 }
   .showing-genres ul {
-      list-style-type: square;
+      list-style-type: none;
+      padding: 0;
+      margin-left: 2%;
   }
   .showing-genres li {
     float: left;
     width: auto;
-    margin: 2% 5%;
+    margin: 0 2% 2%;
+    font-size: 0.8em;
   }
