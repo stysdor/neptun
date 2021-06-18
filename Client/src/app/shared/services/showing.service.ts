@@ -25,15 +25,20 @@ export class ShowingService {
           return response;
         })
       );
-    console.log(showings);
     return showings;
   }
 
   getTodaysShowing() {
-    return this.http.get<Showing>(this.baseUrl + 'today');
+    return this.http.get<Showing>(this.baseUrl + 'showings/today')
+      .pipe(
+       // map((response: Showing) => { return new Showing(response) })
+      );
   }
 
   getTommorowShowing() {
-    return this.http.get<Showing>(this.baseUrl + 'tommorow');
+    return this.http.get<Showing>(this.baseUrl + 'showings/tommorow')
+      .pipe(
+       // map((response: Showing) => { return new Showing(response) })
+      );
   }
 }

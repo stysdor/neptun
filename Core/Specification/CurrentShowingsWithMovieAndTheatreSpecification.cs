@@ -11,10 +11,8 @@ namespace Core.Specification
     {
         public CurrentShowingsWithMovieAndTheatreSpecification(ShowingSpecParams showingParams)
          : base(x =>
-             (x.ShowingDateTime >= showingParams.DateOfToday && 
-                x.ShowingDateTime <= showingParams.DateOfToday.AddDays(showingParams.RangeOfDays)) &&
-             (string.IsNullOrEmpty(showingParams.Search) || x.Movie.Title.ToLower().Contains
-             (showingParams.Search)))
+             (x.ShowingDateTime >= showingParams.DateOfToday ) &&
+             (string.IsNullOrEmpty(showingParams.Search) || x.Movie.Title.ToLower().Contains(showingParams.Search)))
         {
             AddInclude(x => x.Movie);
             AddInclude(x => x.Theatre);

@@ -10,6 +10,5 @@ namespace Core.Specification
     {
         public DateTime DateOfToday { get; set; }
 
-        public int RangeOfDays { get; set; } = 14;
     }
 }

@@ -11,6 +11,33 @@
   --main-bg-hover: #2c2f33;
 }
 
+/*  reset default styles  */
+* {
+  box-sizing: border-box;
+}
+
+body, html, ul, li {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--tx-color);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+ /*end of section*/
+
 body {
   background-color: var(--main-light-color);
 

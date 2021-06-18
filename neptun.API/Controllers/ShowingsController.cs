@@ -49,7 +49,7 @@ namespace neptun.API.Controllers
         }
 
         [HttpGet]
-        [Route("tomorrow")]
+        [Route("tommorow")]
         public async Task<ActionResult<ShowingDTO>> GetTomorrowsShowing()
         {
             var spec = new CurrentShowingsWithMovieAndTheatreSpecification(DateTime.Today.AddDays(1));

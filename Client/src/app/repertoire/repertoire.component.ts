@@ -28,21 +28,6 @@ export class RepertoireComponent implements OnInit {
     }, error => {
       console.log(error);
     }) 
-    /*
-    const mockShowings: Showing[] = [
-      {
-        id: 1,
-        movie: { id: 1, title: "Title", description: "description", pictureUrl: "blabla", genres: ["Action", "Dramat"] },
-        theatreName: "sala okretowa",
-        showingDateTime: new Date(2021, 6, 15, 18, 0, 0)
-      },
-      {
-        id: 2,
-        movie: { id: 1, title: "Title2", description: "description2", pictureUrl: "blabla", genres: [ "Action" , "Dramat" ] },
-        theatreName: "sala okretowa",
-        showingDateTime: new Date(2021, 6, 16, 18, 0, 0)
-      }
-    ]
-    this.showings = mockShowings; */
+   
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Showing } from '../../shared/models/showing';
+import { ShowingService } from '../../shared/services/showing.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,12 @@ import { Showing } from '../../shared/models/showing';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  comingShowing: Showing[];
+  todayShowing: Showing;
+  tommorowShowing: Showing;
   isMobile: boolean;
 
 
-  constructor() {
+  constructor(private showingService: ShowingService) {
   }
 
   ngOnInit(): void {
@@ -19,6 +21,9 @@ export class HomeComponent implements OnInit {
     window.onresize = () => {
       this.isMobile = this.getIsMobile();
     }
+
+    this.getTodaysShowing();
+    this.getTommorowsShowing();
   }
 
   getIsMobile() {
@@ -30,5 +35,23 @@ export class HomeComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  getTodaysShowing() {
+    this.showingService.getTodaysShowing().subscribe(response => {
+      this.todayShowing = response;
+      console.log(this.todayShowing);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getTommorowsShowing() {
+    this.showingService.getTommorowShowing().subscribe(response => {
+      this.tommorowShowing = response;
+      console.log(this.tommorowShowing);
+    }, error => {
+      console.log(error);
+    });
   }
 }
